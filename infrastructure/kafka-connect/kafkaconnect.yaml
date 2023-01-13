@@ -8,7 +8,7 @@ metadata:
 spec:
   image: gkocur/kafka-connect-debezium-protobuf:1
   replicas: 1
-  bootstrapServers: kafka-cluster-kafka-bootstrap:9092
+  bootstrapServers: my-cluster-kafka-bootstrap:9092
   config:
     config.storage.replication.factor: 1
     offset.storage.replication.factor: 1
