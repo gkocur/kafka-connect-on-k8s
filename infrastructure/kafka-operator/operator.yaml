@@ -12,6 +12,6 @@ spec:
         kind: HelmRepository
         name: strimzi
         namespace: flux-system
-      version: 0.26.0
+      version: 0.32.0
   interval: 1m0s
   releaseName: kafka-operator
