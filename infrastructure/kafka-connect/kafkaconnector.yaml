@@ -21,6 +21,8 @@ spec:
     include.schema.changes: "true"
     table.include.list: "products"
     topic.creation.enable: "true"
+    topic.creation.default.replication.factor: 3
+    topic.creation.default.partitions: 1
     database.allowPublicKeyRetrieval: "true"
     #key.converter: io.confluent.connect.avro.AvroConverter
     #key.converter.schema.registry.url: http://schema-registry-cp-schema-registry:8081
