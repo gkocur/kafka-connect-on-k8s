@@ -7,7 +7,7 @@ metadata:
     strimzi.io/use-connector-resources: "true"
 spec:
   version: 3.3.1
-  image: gkocur/kafka-connect-debezium-protobuf:1
+  image: mateushenrique/owshq-kafka-connect-strimzi:3.2.3
   replicas: 1
   bootstrapServers: my-cluster-kafka-bootstrap:9092
   config:
