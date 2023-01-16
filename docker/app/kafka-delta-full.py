@@ -13,14 +13,14 @@ spark = SparkSession \
 
 # Parameters
 broker = "my-cluster-kafka-bootstrap:9092"
-topic = "mysql.inventory.product"
-primary_key = "column1"
+topic = "dbserver1.inventory.products"
+primary_key = "id"
 
 schema_topic = (StructType([
-        StructField('ordertime', TimestampType(), True),
-        StructField('orderid', IntegerType(), True),
-        StructField('itemid', StringType(), True),
-        StructField('orderunits', FloatType(), True)
+        StructField('id', IntegerType(), True),
+        StructField('name', StringType(), True),
+        StructField('description', StringType(), True),
+        StructField('weight', FloatType(), True)
         ])
 )
 
@@ -28,10 +28,10 @@ schema_topic = (StructType([
 stream_df = (spark.readStream
     .format("kafka")
     .options("kafka.bootstrap.servers", broker)
-    .options("topic", topic) #topic / subscribe
+    .options("topic", topic) #topic ou subscribe ?
     #.options("failOnDataLoss", "false") talvez não precise, só se der erro
     .options("startingOffsets", "latest")
-    .options("checkpointLocation", "checkpoint") #checkpointLocation / checkpoint
+    .options("checkpointLocation", "checkpoint") #checkpointLocation ou checkpoint ?
     .load()
     .select(F.from_json(F.col("value").cast('string'), schema_topic).alias('data'))
     )
