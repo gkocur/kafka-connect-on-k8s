@@ -21,7 +21,7 @@ spec:
       - name: kafka-delta
         image: andreyolv/kafka-sink:1.1
         command:
-        - "python"
+        - "python3"
         - "app/kafka-delta-full.py"
         resources:
           requests:
