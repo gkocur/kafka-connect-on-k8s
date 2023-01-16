@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kafka-delta
+  namespace: kafka
+  labels:
+    app: kafka-delta
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: kafka-delta
+  template:
+    metadata:
+      labels:
+        app: kafka-delta
+    containers:
+    - name: kafka-delta
+      image: andreyolv/kafka-sink:1.1
+      command:
+      - "python"
+      - "app/kafka-delta-full.py"
+      resources:
+          requests:
+            memory: 1024M
+      imagePullPolicy: Always
+    #imagePullSecrets:
+    #  - name: acr-secret
