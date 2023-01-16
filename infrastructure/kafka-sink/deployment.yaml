@@ -22,7 +22,7 @@ spec:
         image: andreyolv/kafka-sink:1.1
         command:
         - "python3"
-        - "app/kafka-delta-full.py"
+        - "kafka-delta-full.py"
         resources:
           requests:
             cpu: "500m"
