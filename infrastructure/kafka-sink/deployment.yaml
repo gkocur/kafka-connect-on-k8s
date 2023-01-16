@@ -16,15 +16,20 @@ spec:
     metadata:
       labels:
         app: kafka-delta
-    containers:
-    - name: kafka-delta
-      image: andreyolv/kafka-sink:1.1
-      command:
-      - "python"
-      - "app/kafka-delta-full.py"
-      resources:
+    spec:
+      containers:
+      - name: kafka-delta
+        image: andreyolv/kafka-sink:1.1
+        command:
+        - "python"
+        - "app/kafka-delta-full.py"
+        resources:
           requests:
-            memory: 1024M
-      imagePullPolicy: Always
-    #imagePullSecrets:
-    #  - name: acr-secret
+            cpu: "500m"
+            memory: 1Gi
+          limits:
+            cpu: "1"
+            memory: 2Gi
+        imagePullPolicy: Always
+      #imagePullSecrets:
+      #  - name: acr-secret
