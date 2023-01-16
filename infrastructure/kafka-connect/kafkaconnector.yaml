@@ -22,7 +22,7 @@ spec:
     database.whitelist: "inventory.product" # vários "inventory.table1, inventory.table2, ..."
     #table.include.list: "products"
     #query: "SELECT * FROM .. WHERE column1='Abc'"
-    database.history.kafka.bootstrap.servers: "kafka-cluster-kafka-bootstrap:9092"
+    database.history.kafka.bootstrap.servers: "my-cluster-kafka-bootstrap:9092"
     database.history.kafka.topic: "schema-changes.inventory"
     include.schema.changes: "true"
     database.allowPublicKeyRetrieval: "true"
