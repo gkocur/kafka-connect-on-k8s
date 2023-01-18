@@ -16,10 +16,10 @@ spec:
         port: 9093
         type: internal
         tls: true
-        authentication:
-          type: scram-sha-512
-    authorization:
-      type: simple
+    #    authentication:
+    #      type: scram-sha-512
+    #authorization:
+    #  type: simple
       #- name: external
       #  port: 9094
       #  type: loadbalancer
@@ -41,11 +41,11 @@ spec:
       volumes:
       - id: 0
         type: persistent-claim
-        size: 10Gi
+        size: 1Gi
         deleteClaim: false
       - id: 1
         type: persistent-claim
-        size: 10Gi
+        size: 1Gi
         deleteClaim: false
     resources:
       requests:
@@ -58,7 +58,7 @@ spec:
     replicas: 3
     storage:
       type: persistent-claim
-      size: 10Gi
+      size: 1Gi
       deleteClaim: false
     resources:
       requests:
