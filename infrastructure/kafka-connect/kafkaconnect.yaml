@@ -10,16 +10,16 @@ spec:
   image: mateushenrique/owshq-kafka-connect-strimzi:3.2.3
   replicas: 1
   bootstrapServers: gac-cdc-kafka-bootstrap:9092
-  #tls:
-  #  trustedCertificates:
-  #    - secretName: gac-cdc-cluster-ca-cert
-  #      certificate: ca.crt
-  #authentication:
-  #  type: scram-sha-512
-  #  username: my-connect
-  #  passwordSecret:
-  #    secretName: my-connect
-  #    password: password
+  tls:
+    trustedCertificates:
+      - secretName: gac-cdc-cluster-ca-cert
+        certificate: ca.crt
+  authentication:
+    type: scram-sha-512
+    username: connect-cluster
+    passwordSecret:
+      secretName: connect-cluster-secret
+      password: connect-cluster-password
   config:
     group.id: connect-cluster
     offset.storage.topic: connect-cluster-offsets
