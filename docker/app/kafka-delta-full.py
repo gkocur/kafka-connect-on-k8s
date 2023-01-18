@@ -12,7 +12,7 @@ spark = SparkSession \
         .getOrCreate()
 
 # Parameters
-broker = "my-cluster-kafka-bootstrap:9092"
+broker = "gac-cdc-kafka-bootstrap:9092"
 topic = "dbserver1.inventory.products"
 primary_key = "id"
 

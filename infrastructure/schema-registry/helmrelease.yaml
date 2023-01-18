@@ -2,7 +2,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: schema-registry
-  namespace: kafka
+  namespace: kafka-strimzi
 spec:
   interval: 1m
   chart:
@@ -16,5 +16,5 @@ spec:
   values:
     kafka:
       enabled: false
-      bootstrapServers: my-cluster-kafka-bootstrap:9092
+      bootstrapServers: gac-cdc-kafka-bootstrap:9092
       fullnameOverride: sr
