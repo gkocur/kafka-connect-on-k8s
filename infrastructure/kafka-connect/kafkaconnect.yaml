@@ -16,7 +16,7 @@ spec:
         certificate: ca.crt
   authentication:
     type: scram-sha-512
-    username: connect-cluster
+    username: gac
     passwordSecret:
       secretName: connect-cluster-secret
       password: connect-cluster-password
