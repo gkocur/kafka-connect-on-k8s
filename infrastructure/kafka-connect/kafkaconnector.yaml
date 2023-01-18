@@ -2,7 +2,7 @@ apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaConnector
 metadata:
   name: "inventory-connector"
-  namespace: kafka
+  namespace: kafka-strimzi
   labels:
     strimzi.io/cluster: connect-cluster
 spec:
@@ -24,9 +24,9 @@ spec:
     #query: "SELECT * FROM .. WHERE column1='Abc'"
     database.history.kafka.bootstrap.servers: "gac-cdc-kafka-bootstrap:9092"
     database.history.kafka.topic: "sddl-dbhistory-cdc-tables"
-    database.history.security.protocol: "SASL_SSL"
-    database.history.sasl.mechanism: "SCRAM-SHA-512"
-    database.history.sasl.jaas.config:
+    #database.history.security.protocol: "SASL_SSL"
+    #database.history.sasl.mechanism: "SCRAM-SHA-512"
+    #database.history.sasl.jaas.config:
     include.schema.changes: "true"
     database.allowPublicKeyRetrieval: "true"
     #topic.creation.enable: "true"
