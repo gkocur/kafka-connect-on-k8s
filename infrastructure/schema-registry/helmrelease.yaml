@@ -16,5 +16,5 @@ spec:
   values:
     kafka:
       enabled: false
-      bootstrapServers: gac-cdc-kafka-bootstrap:9092
+      bootstrapServers: gac-cdc-kafka-bootstrap:9093
       fullnameOverride: sr

@@ -9,7 +9,7 @@ spec:
   version: 3.3.1
   image: mateushenrique/owshq-kafka-connect-strimzi:3.2.3
   replicas: 1
-  bootstrapServers: gac-cdc-kafka-bootstrap:9092
+  bootstrapServers: gac-cdc-kafka-bootstrap:9093
   tls:
     trustedCertificates:
       - secretName: gac-cdc-cluster-ca-cert
