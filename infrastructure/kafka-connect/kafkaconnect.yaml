@@ -2,14 +2,24 @@ apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaConnect
 metadata:
   name: connect-cluster
-  namespace: kafka
+  namespace: kafka-strimzi
   annotations:
     strimzi.io/use-connector-resources: "true"
 spec:
   version: 3.3.1
   image: mateushenrique/owshq-kafka-connect-strimzi:3.2.3
   replicas: 1
-  bootstrapServers: my-cluster-kafka-bootstrap:9092
+  bootstrapServers: gac-cdc-kafka-bootstrap:9092
+  tls:
+    trustedCertificates:
+      - secretName: gac-cdc-cluster-ca-cert
+        certificate: ca.crt
+  authentication:
+    type: scram-sha-512
+    username: my-connect
+    passwordSecret:
+      secretName: my-connect
+      password: password
   config:
     group.id: connect-cluster
     offset.storage.topic: connect-cluster-offsets

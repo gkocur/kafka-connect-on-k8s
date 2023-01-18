@@ -1,21 +1,25 @@
 apiVersion: kafka.strimzi.io/v1beta2
 kind: Kafka
 metadata:
-  name: my-cluster
-  namespace: kafka
+  name: gac-cdc
+  namespace: kafka-strimzi
 spec:
   kafka:
     version: 3.3.1
     replicas: 3
     listeners:
-      - name: plain
-        port: 9092
-        type: internal
-        tls: false
+      #- name: plain
+      #  port: 9092
+      #  type: internal
+      #  tls: false
       - name: tls
         port: 9093
         type: internal
         tls: true
+        authentication:
+          type: scram-sha-512
+    authorization:
+      type: simple
       #- name: external
       #  port: 9094
       #  type: loadbalancer
@@ -37,11 +41,11 @@ spec:
       volumes:
       - id: 0
         type: persistent-claim
-        size: 1Gi
+        size: 10Gi
         deleteClaim: false
       - id: 1
         type: persistent-claim
-        size: 1Gi
+        size: 10Gi
         deleteClaim: false
     resources:
       requests:
@@ -54,7 +58,7 @@ spec:
     replicas: 3
     storage:
       type: persistent-claim
-      size: 1Gi
+      size: 10Gi
       deleteClaim: false
     resources:
       requests:

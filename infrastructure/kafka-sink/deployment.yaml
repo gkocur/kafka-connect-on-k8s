@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: kafka-delta
-  namespace: kafka
+  namespace: kafka-strimzi
   labels:
     app: kafka-delta
 spec:
