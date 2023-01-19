@@ -19,7 +19,7 @@ spec:
     username: gac
     passwordSecret:
       secretName: gac
-      password: connect-cluster-password
+      password: password
   config:
     group.id: connect-cluster
     offset.storage.topic: connect-cluster-offsets
