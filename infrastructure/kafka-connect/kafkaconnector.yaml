@@ -15,16 +15,8 @@ spec:
     #value.converter.schema.registry.url: http://schema-registry-cp-schema-registry:8081
     database.hostname: mysql.mysql
     database.port: "3306"
-    database.user: 
-      valueFrom:
-        secretKeyRef:
-          name: gac-secrets
-          key: user
-    database.password: 
-      valueFrom:
-        secretKeyRef:
-          name: gac-secrets
-          key: password
+    database.user: ${file:/opt/kafka/external-configuration/connector-config/gac-secrets:user}"
+    database.password: ${file:/opt/kafka/external-configuration/connector-config/gac-secrets:password}"
     database.server.id: "184054"
     database.server.name: "dbserver1"
     database.whitelist: "inventory" # vários "inventory.table1, inventory.table2, ..."
