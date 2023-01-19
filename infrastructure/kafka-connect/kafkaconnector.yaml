@@ -5,18 +5,6 @@ metadata:
   namespace: kafka-strimzi
   labels:
     strimzi.io/cluster: connect-cluster
-externalConfiguration:
-  env:
-  - name: user
-    valueFrom:
-      secretKeyRef:
-        name: gac-secrets
-        key: user
-  - name: password
-    valueFrom:
-      secretKeyRef:
-        name: gac-secrets
-        key: password
 spec:
   class: io.debezium.connector.mysql.MySqlConnector
   tasksMax: 1
@@ -27,8 +15,16 @@ spec:
     #value.converter.schema.registry.url: http://schema-registry-cp-schema-registry:8081
     database.hostname: mysql.mysql
     database.port: "3306"
-    database.user: {{user}}
-    database.password: {{password}}
+    database.user: 
+      valueFrom:
+        secretKeyRef:
+          name: gac-secrets
+          key: user
+    database.password: 
+      valueFrom:
+        secretKeyRef:
+          name: gac-secrets
+          key: password
     database.server.id: "184054"
     database.server.name: "dbserver1"
     database.whitelist: "inventory" # vários "inventory.table1, inventory.table2, ..."
