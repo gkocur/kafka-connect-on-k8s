@@ -27,7 +27,7 @@ spec:
     database.history.security.protocol: "SASL_SSL"
     database.history.sasl.mechanism: "SCRAM-SHA-512"
     database.history.sasl.username: "gac"
-    database.history.sasl.password: "v7UyRSIMoIhl"
+    database.history.sasl.password: "dZZxxeT4lWda"
     database.history.ssl.ca.location: "ca.crt"
     #database.history.sasl.jaas.config:
     include.schema.changes: "true"
