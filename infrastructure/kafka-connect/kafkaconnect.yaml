@@ -18,7 +18,7 @@ spec:
     type: scram-sha-512
     username: gac
     passwordSecret:
-      secretName: connect-cluster-secret
+      secretName: gac
       password: connect-cluster-password
   config:
     group.id: connect-cluster
