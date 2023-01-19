@@ -40,4 +40,4 @@ spec:
     volumes:
       - name: connector-config
         secret:
-          secretName: mysql-credentials
+          secretName: gac-secrets
