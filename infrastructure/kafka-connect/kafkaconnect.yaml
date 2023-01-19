@@ -29,10 +29,10 @@ spec:
     config.storage.replication.factor: -1
     offset.storage.replication.factor: -1
     status.storage.replication.factor: -1
-    #config.providers: file
-    #config.providers.file.class: org.apache.kafka.common.config.provider.FileConfigProvider
-    config.providers: directory
-    config.providers.file.class: org.apache.kafka.common.config.provider.DirectoryConfigProvider
+    config.providers: file
+    config.providers.file.class: org.apache.kafka.common.config.provider.FileConfigProvider
+    #config.providers: directory
+    #config.providers.file.class: org.apache.kafka.common.config.provider.DirectoryConfigProvider
   resources:
     requests:
         memory: 1096Mi
@@ -44,4 +44,4 @@ spec:
     volumes:
       - name: connector-config
         secret:
-          secretName: gac-secrets
+          secretName: mysql-credentials
