@@ -24,7 +24,7 @@ spec:
     #query: "SELECT * FROM .. WHERE column1='Abc'"
     database.history.kafka.bootstrap.servers: "gac-cdc-kafka-bootstrap:9093"
     database.history.kafka.topic: "sddl-dbhistory-cdc-tables"
-    database.history.security.protocol: "SASL_SSL"
+    database.history.security.protocol: "PLAIN" #"SASL_SSL"
     database.history.sasl.mechanism: "SCRAM-SHA-512"
     #database.history.sasl.username: "gac"
     #database.history.sasl.password: "dZZxxeT4lWda"
