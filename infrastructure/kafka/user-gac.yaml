@@ -17,7 +17,10 @@ spec:
         type: group
         name: connect-cluster
       operations:
+        - Create
+        - Describe
         - Read
+        - Write
     - resource:
         type: topic
         name: connect-cluster-configs
@@ -48,7 +51,10 @@ spec:
         type: group
         name: connect-cluster
       operations:
-       - Read
+        - Create
+        - Describe
+        - Read
+        - Write
     - resource:
         type: topic
         name: dbserver1.inventory.products
