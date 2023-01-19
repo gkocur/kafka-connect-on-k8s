@@ -16,9 +16,9 @@ spec:
     #value.converter.schema.registry.url: http://schema-registry-cp-schema-registry:8081
     database.hostname: mysql.mysql
     database.port: "3306"
-    database.user: "root"
-    database.password: {{USER}}
-    database.server.id: {{PASSWORD}}
+    database.user: {{USER}}
+    database.password: {{PASSWORD}}
+    database.server.id: "184054"
     database.server.name: "dbserver1"
     database.whitelist: "inventory" # vários "inventory.table1, inventory.table2, ..."
     #table.include.list: "products"
