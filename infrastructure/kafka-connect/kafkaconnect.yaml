@@ -1,7 +1,7 @@
 apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaConnect
 metadata:
-  name: connect-cluster
+  name: my-connect
   namespace: kafka-strimzi
   annotations:
     strimzi.io/use-connector-resources: "true"
@@ -16,9 +16,9 @@ spec:
         certificate: ca.crt
   authentication:
     type: scram-sha-512
-    username: gac
+    username: my-connect
     passwordSecret:
-      secretName: gac
+      secretName: my-connect
       password: password
   config:
     group.id: connect-cluster
