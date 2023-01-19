@@ -28,7 +28,7 @@ spec:
     database.history.sasl.mechanism: "SCRAM-SHA-512"
     #database.history.sasl.username: "gac"
     #database.history.sasl.password: "dZZxxeT4lWda"
-    database.history.ssl.ca.location: "ca.crt"
+    database.history.ssl.ca.location: "infrastructure/kafka-connect/ca.crt"
     database.history.sasl.jaas.config: "org.apache.kafka.common.security.plain.PlainLoginModule required username='gac' password='dZZxxeT4lWda';"
     include.schema.changes: "true"
     database.allowPublicKeyRetrieval: "true"
