@@ -25,7 +25,7 @@ spec:
     database.history.kafka.bootstrap.servers: "gac-cdc-kafka-bootstrap:9093"
     database.history.kafka.topic: "sddl-dbhistory-cdc-tables"
     #database.history.security.protocol: "SASL_SSL"
-    #database.history.sasl.mechanism: "PLAIN" #"SCRAM-SHA-512"
+    #database.history.sasl.mechanism: "SCRAM-SHA-512"
     #database.history.sasl.username: "gac"
     #database.history.sasl.password: "dZZxxeT4lWda"
     #database.history.ssl.ca.location: "infrastructure/kafka-connect/ca.crt"
