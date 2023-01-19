@@ -26,10 +26,10 @@ spec:
     database.history.kafka.topic: "sddl-dbhistory-cdc-tables"
     database.history.security.protocol: "SASL_SSL"
     database.history.sasl.mechanism: "SCRAM-SHA-512"
-    database.history.sasl.username: "gac"
-    database.history.sasl.password: "dZZxxeT4lWda"
+    #database.history.sasl.username: "gac"
+    #database.history.sasl.password: "dZZxxeT4lWda"
     database.history.ssl.ca.location: "ca.crt"
-    #database.history.sasl.jaas.config:
+    database.history.sasl.jaas.config: "org.apache.kafka.common.security.plain.PlainLoginModule required username=gac password=dZZxxeT4lWda;"
     include.schema.changes: "true"
     database.allowPublicKeyRetrieval: "true"
     #topic.creation.enable: "true"
