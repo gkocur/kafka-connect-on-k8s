@@ -5,18 +5,7 @@ metadata:
   namespace: kafka-strimzi
   labels:
     strimzi.io/cluster: connect-cluster
-#externalConfiguration:
-#  env:
-#  - name: CONFLUENT_ACCESS_KEY_ID
-#    valueFrom:
-#      secretKeyRef:
-#        name: confluent-creds
-#        key: confluentAccessKey
-#  - name: CONFLUENT_SECRET_ACCESS_KEY
-#    valueFrom:
-#      secretKeyRef:
-#        name: confluent-creds
-#        key: 
+envFromSecret: gac-secrets
 spec:
   class: io.debezium.connector.mysql.MySqlConnector
   tasksMax: 1
@@ -28,8 +17,8 @@ spec:
     database.hostname: mysql.mysql
     database.port: "3306"
     database.user: "root"
-    database.password: "debezium"
-    database.server.id: "184054"
+    database.password: {{USER}}
+    database.server.id: {{PASSWORD}}
     database.server.name: "dbserver1"
     database.whitelist: "inventory" # vários "inventory.table1, inventory.table2, ..."
     #table.include.list: "products"
