@@ -5,6 +5,18 @@ metadata:
   namespace: kafka-strimzi
   labels:
     strimzi.io/cluster: connect-cluster
+#externalConfiguration:
+#  env:
+#  - name: CONFLUENT_ACCESS_KEY_ID
+#    valueFrom:
+#      secretKeyRef:
+#        name: confluent-creds
+#        key: confluentAccessKey
+#  - name: CONFLUENT_SECRET_ACCESS_KEY
+#    valueFrom:
+#      secretKeyRef:
+#        name: confluent-creds
+#        key: 
 spec:
   class: io.debezium.connector.mysql.MySqlConnector
   tasksMax: 1
@@ -22,7 +34,7 @@ spec:
     database.whitelist: "inventory" # vários "inventory.table1, inventory.table2, ..."
     #table.include.list: "products"
     #query: "SELECT * FROM .. WHERE column1='Abc'"
-    database.history.kafka.bootstrap.servers: "gac-cdc-kafka-bootstrap:9093"
+    database.history.kafka.bootstrap.servers: "gac-cdc-kafka-bootstrap:9092"
     database.history.kafka.topic: "sddl-dbhistory-cdc-tables"
     #database.history.security.protocol: "SASL_SSL"
     #database.history.sasl.mechanism: "SCRAM-SHA-512"
