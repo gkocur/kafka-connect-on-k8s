@@ -2,6 +2,7 @@ apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaUser
 metadata:
   name: my-connect
+  namespace: kafka-strimzi
   labels:
     strimzi.io/cluster: gac-cdc
 spec:
