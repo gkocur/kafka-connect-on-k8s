@@ -2,6 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: env-kafka-ui
+  namespace: kafka-strimzi
 data:
   KAFKA_CLUSTERS_0_NAME: gac-cdc
   KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: http://gac-cdc-kafka-bootstrap.kafka-strimzi.svc.cluster.local:9092
