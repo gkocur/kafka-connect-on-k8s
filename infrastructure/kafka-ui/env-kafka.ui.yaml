@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: env-kafka-ui
+data:
+  KAFKA_CLUSTERS_0_NAME: gac-cdc
+  KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: http://gac-cdc-kafka-bootstrap.kafka-strimzi.svc.cluster.local:9092
+  KAFKA_CLUSTERS_0_SCHEMAREGISTRY: http://schema-registry-cp-schema-registry.kafka-strimzi.svc.cluster.local:8081
+  KAFKA_CLUSTERS_0_KAFKACONNECT_0_NAME: connect-cluster
+  KAFKA_CLUSTERS_0_KAFKACONNECT_0_ADDRESS: http://connect-cluster-connect-api.kafka-strimzi.svc.cluster.local:8083 
