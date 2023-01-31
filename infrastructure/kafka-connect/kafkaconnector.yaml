@@ -4,7 +4,7 @@ metadata:
   name: "inventory-connector"
   namespace: kafka-strimzi
   labels:
-    strimzi.io/cluster: connect2-cluster
+    strimzi.io/cluster: connect-cluster
 spec:
   class: io.debezium.connector.mysql.MySqlConnector
   tasksMax: 1
