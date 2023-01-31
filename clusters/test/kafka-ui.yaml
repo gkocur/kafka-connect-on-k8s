@@ -1,0 +1,14 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+kind: Kustomization
+metadata:
+  name: kafka-ui
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  path: ./infrastructure/kafka-ui
+  prune: false
+  dependsOn:
+    - name: kafka-operator
+  sourceRef:
+    kind: GitRepository
+    name: flux-system

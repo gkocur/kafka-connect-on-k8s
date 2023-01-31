@@ -1,0 +1,22 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: kafka-ui
+  namespace: kafka-strimzi
+spec:
+  interval: 1m
+  chart:
+    spec:
+      chart: ./charts/kafka-ui
+      sourceRef:
+        kind: GitRepository
+        name: provectus
+        namespace: flux-system
+  releaseName: kafka-ui
+  values:
+    env: {KAFKA_CLUSTERS_0_NAME:gac-cdc
+          ,KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS:http://gac-cdc-kafka-bootstrap.kafka-strimzi.svc.cluster.local:9092
+          ,KAFKA_CLUSTERS_0_SCHEMAREGISTRY:http://schema-registry-cp-schema-registry.kafka-strimzi.svc.cluster.local:8081
+          ,KAFKA_CLUSTERS_0_KAFKACONNECT_0_NAME:connect-cluster
+          ,KAFKA_CLUSTERS_0_KAFKACONNECT_0_ADDRESS:http://connect-cluster-connect-api.kafka-strimzi.svc.cluster.local:8083 
+          }
