@@ -15,6 +15,6 @@ spec:
   releaseName: schema-registry
   values:
     kafka:
-      enabled: false
+      enabled: true
       bootstrapServers: gac-cdc-kafka-bootstrap:9092
-      fullnameOverride: sr
+      #fullnameOverride: sr
