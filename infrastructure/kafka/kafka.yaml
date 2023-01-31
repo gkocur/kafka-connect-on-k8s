@@ -48,6 +48,9 @@ spec:
         type: persistent-claim
         size: 1Gi
         deleteClaim: false
+    jmxOptions:
+      authentication:
+        type: "password"
     resources:
       requests:
         memory: 512Mi
