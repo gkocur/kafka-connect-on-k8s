@@ -14,6 +14,8 @@ spec:
         namespace: flux-system
   releaseName: kafka-ui
   values:
+    service:
+      nodePort: 80
     envFrom:
     - configMapRef:
         name: env-kafka-ui    
