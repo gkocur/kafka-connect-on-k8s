@@ -21,8 +21,13 @@ spec:
     #- configMapRef:
     #    name: env-kafka-ui    
     env: 
-      KAFKA_CLUSTERS_0_NAME: gac-cdc
-      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: http://gac-cdc-kafka-bootstrap.kafka-strimzi.svc.cluster.local:9092
-      KAFKA_CLUSTERS_0_SCHEMAREGISTRY: http://schema-registry-cp-schema-registry.kafka-strimzi.svc.cluster.local:8081
-      KAFKA_CLUSTERS_0_KAFKACONNECT_0_NAME: connect-cluster
-      KAFKA_CLUSTERS_0_KAFKACONNECT_0_ADDRESS: http://connect-cluster-connect-api.kafka-strimzi.svc.cluster.local:8083 
+    - name: KAFKA_CLUSTERS_0_NAME
+      value: gac-cdc
+    - name: KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS
+      value: http://gac-cdc-kafka-bootstrap.kafka-strimzi.svc.cluster.local:9092
+    - name: KAFKA_CLUSTERS_0_SCHEMAREGISTRY
+      value: http://schema-registry-cp-schema-registry.kafka-strimzi.svc.cluster.local:8081
+    - name: KAFKA_CLUSTERS_0_KAFKACONNECT_0_NAME
+      value: connect-cluster
+    - name: KAFKA_CLUSTERS_0_KAFKACONNECT_0_ADDRESS
+      value: http://connect-cluster-connect-api.kafka-strimzi.svc.cluster.local:8083 
